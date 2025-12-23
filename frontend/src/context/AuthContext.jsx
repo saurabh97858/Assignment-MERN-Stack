@@ -32,7 +32,11 @@ export const AuthProvider = ({ children }) => {
             return data;
         } catch (error) {
             console.error(error);
-            toast.error(error.response?.data?.message || 'Login failed');
+            if (!error.response) {
+                toast.error('Network Error! Check API URL or Server Status.');
+            } else {
+                toast.error(error.response?.data?.message || 'Login failed');
+            }
             throw error;
         }
     };
@@ -47,7 +51,11 @@ export const AuthProvider = ({ children }) => {
             return data;
         } catch (error) {
             console.error(error);
-            toast.error(error.response?.data?.message || 'Signup failed');
+            if (!error.response) {
+                toast.error('Network Error! Check API URL or Server Status.');
+            } else {
+                toast.error(error.response?.data?.message || 'Signup failed');
+            }
             throw error;
         }
     };

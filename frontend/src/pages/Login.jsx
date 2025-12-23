@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { BookOpen, User, ShieldCheck } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import api from '../api/axios';
 
 // Backgrounds
 import studentBg from '../assets/student_login_bg.png';
@@ -121,6 +122,12 @@ const Login = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+            {/* Debug Info Footer */}
+            <div className="absolute bottom-2 left-0 right-0 text-center pointer-events-none z-20">
+                <p className="text-[10px] text-white/30 font-mono">
+                    API: {api.defaults.baseURL}
+                </p>
             </div>
         </div>
     );
