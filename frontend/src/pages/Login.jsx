@@ -123,7 +123,12 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            {/* Debug Info Footer has been removed for production release */}
+            {/* Debug Info Footer */}
+            <div className="absolute bottom-2 left-0 right-0 text-center pointer-events-none z-20">
+                <p className="text-[10px] text-white/30 font-mono">
+                    API: {api.defaults.baseURL}
+                </p>
+            </div>
         </div>
     );
 };
