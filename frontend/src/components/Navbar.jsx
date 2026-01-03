@@ -23,11 +23,18 @@ const Navbar = () => {
 
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         <div className="hidden md:flex items-center gap-4">
-                            <Link to="/login" className="text-gray-900 hover:text-indigo-600 font-medium px-4 py-2 transition-colors duration-200">
-                                Login
+                            <Link to="/login" className="px-5 py-2.5 rounded-full text-slate-700 font-bold hover:text-indigo-600 transition-colors relative group overflow-hidden">
+                                <span className="relative z-10">Login</span>
+                                <span className="absolute inset-0 bg-indigo-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                             </Link>
-                            <Link to="/signup" className="text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-full text-sm px-6 py-2.5 text-center shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transform hover:-translate-y-0.5 transition-all duration-200">
-                                Apply Now
+
+                            <Link to="/signup" className="relative px-6 py-2.5 rounded-full font-bold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-95 transition-all duration-300 group overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-[length:200%_auto] animate-gradient">
+                                <span className="relative z-10 flex items-center gap-2">
+                                    Apply Now
+                                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                                </span>
+                                {/* Shimmer Effect overlay */}
+                                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/25 to-transparent z-0"></div>
                             </Link>
                         </div>
                         <button
@@ -51,14 +58,14 @@ const Navbar = () => {
                                 <li key={item.name}>
                                     <Link
                                         to={item.path}
-                                        className={`block py-2 px-3 rounded md:p-0 transition-all duration-200 relative group
+                                        className={`block py-2 px-3 rounded md:p-0 transition-all duration-300 relative group
                                             ${isActive(item.path)
-                                                ? 'text-indigo-600 font-bold'
-                                                : 'text-gray-900 hover:text-indigo-600'
+                                                ? 'text-indigo-600 font-extrabold'
+                                                : 'text-slate-600 font-medium hover:text-indigo-600'
                                             }`}
                                     >
                                         {item.name}
-                                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                                        <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full transition-all duration-300 ease-out ${isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                                     </Link>
                                 </li>
                             ))}

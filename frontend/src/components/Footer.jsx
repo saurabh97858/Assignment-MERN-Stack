@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white pt-16 pb-8">
+        <footer className="bg-gray-900 text-white pt-16 pb-8 relative z-10 border-t border-gray-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* College Info */}
@@ -65,6 +65,22 @@ const Footer = () => {
                             <li><Link to="/campus" className="hover:text-white transition">Campus Life</Link></li>
                             <li><Link to="/login" className="hover:text-white transition">Student Portal</Link></li>
                         </ul>
+                    </div>
+
+                    {/* Newsletter - New Addition */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-6 text-indigo-400">Stay Updated</h4>
+                        <p className="text-gray-400 text-sm mb-4">Subscribe to our newsletter for latest updates and admissions news.</p>
+                        <div className="flex flex-col space-y-3">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                className="bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                            />
+                            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                                Subscribe
+                            </button>
+                        </div>
                     </div>
                 </div>
 
